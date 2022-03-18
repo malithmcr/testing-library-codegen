@@ -18,10 +18,9 @@ export default function (sayHello) {
 export function strLength (str) {
     return str.length;
 }
-
 ```
 Example generated-tests.js:
-
+```
 import test from 'ava';
 import camelizedModuleName, {strLength} from '.';
 
@@ -36,3 +35,4 @@ test('return hello', t => {
 test(TBD, t => { // "TBD" would be something the dev would have to replace
     t.same(strLength(TBD), TBD);
 });
+```
