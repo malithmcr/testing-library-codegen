@@ -9,7 +9,7 @@ The test file will contain empty tests by statically analyzing the code,behaving
 It can't actually build functional tests or figure out what they're supposed to output, but it could at least provide some sort of boilerplate to manually verify.
 
 Example input.js:
-
+```
 export default function (sayHello) {
     if(sayHello) {
         return 'hello';
@@ -18,6 +18,8 @@ export default function (sayHello) {
 export function strLength (str) {
     return str.length;
 }
+
+```
 Example generated-tests.js:
 
 import test from 'ava';
