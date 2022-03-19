@@ -3,7 +3,6 @@
 Testing-library-codegen is a tool where can detect and generate the test files for you by analyzing the JSX or TSX file.
 
 
-
 The test file will contain empty tests by statically analyzing the code,behaving like a coverage tool by figuring out all the ways it could be run (e.g. isCool needs to be true to go in this if statement)
 
 It can't actually build functional tests or figure out what they're supposed to output, but it could at least provide some sort of boilerplate to manually verify.
