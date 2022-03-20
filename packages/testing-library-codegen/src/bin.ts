@@ -2,13 +2,12 @@
 import chalk from 'chalk';
 import { program } from 'commander';
 
-// program
-//   .option('--first')
-//   .option('-s, --separator <char>');
+import test from './cli/test.js';
 
-// program.parse();
+console.log(chalk.blue.bgRed.bold('!!!!!! Creating a Test File !!!!!'));
 
-// const options = program.opts();
-// const limit = options.first ? 1 : undefined;
-// console.log(program.args[0].split(options.separator, limit));
-console.log(chalk.blue.bgRed.bold('Hello world!'));
+program.command('test <name>').description('Generate A test').action(test);
+
+console.log(chalk.blue.bgRed.bold('!!!!!! Test file created !!!!!'));
+
+program.parse(process.argv);
