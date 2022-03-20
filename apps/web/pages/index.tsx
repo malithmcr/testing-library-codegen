@@ -1,4 +1,4 @@
-import { Button } from "testing-library-codegen";
+import { Button } from 'ui';
 
 export default function Web() {
   return (
