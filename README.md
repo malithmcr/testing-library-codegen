@@ -3,9 +3,12 @@
 Testing-library-codegen is a tool where can detect and generate the test files for you by analyzing the JSX or TSX file.
 
 
-# The problem
+# The Problem
 
-When it comes to testing a React application, Developers spend good amount of time rewriting the same boilerplate code. Goal of this package is to help developers 
+When it comes to testing a React application, Developers spend good amount of time rewriting the same boilerplate code. 
+
+# The Solution
+Goal of this package is to help developers 
 to improve productiviy. Let them foucs on the real test. Testing-library-codegen will take care of the basics. 
 
 
