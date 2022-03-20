@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 import chalk from 'chalk';
-// program
-//   .option('--first')
-//   .option('-s, --separator <char>');
-// program.parse();
-// const options = program.opts();
-// const limit = options.first ? 1 : undefined;
-// console.log(program.args[0].split(options.separator, limit));
-console.log(chalk.blue.bgRed.bold('Hello world!'));
+import { program } from 'commander';
+
+import test from './cli/test.js';
+console.log(chalk.blue.bgRed.bold('!!!!!! Creating a Test File !!!!!'));
+program.command('npx hygen test with-prompt').description('Generate A test').action(test);
+console.log(chalk.blue.bgRed.bold('!!!!!! Test file created !!!!!'));
+program.parse(process.argv);
