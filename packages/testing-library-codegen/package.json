@@ -1,14 +1,23 @@
 {
   "name": "testing-library-codegen",
-  "version": "0.0.0",
-  "main": "./index.tsx",
-  "types": "./index.tsx",
+  "version": "0.0.1",
+  "type": "module",
+  "author": "Malith <malithcode@gmail.com>",
   "license": "MIT",
+  "bin": {
+    "tlc": "lib/bin.js"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
   "devDependencies": {
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
-    "tsconfig": "*",
     "config": "*",
+    "tsconfig": "*",
     "typescript": "^4.5.3"
+  },
+  "dependencies": {
+    "chalk": "^5.0.1"
   }
 }
