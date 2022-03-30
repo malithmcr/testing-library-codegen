@@ -1,6 +1,10 @@
-import path from 'path';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
 
-import Logger, { runner } from 'hygen';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+import { runner, Logger } from 'hygen';
+const defaultTemplates = path.join(__dirname, '../templates');
 
 type Hygen = {
   generator: string;
@@ -10,16 +14,18 @@ type Hygen = {
 
 function hygen({ generator, filename, path = '' }: Hygen) {
   return runner(['create', generator, '--name', filename, '--path', path], {
-    templates: '../templates',
+    templates: defaultTemplates,
     cwd: process.cwd(),
     //@ts-ignore
-    createPrompter: () => require('enquirer'),
+    logger: new Logger(console.log.bind(console)),
+
     exec: (action: string, body: string) => {
       const opts = body && body.length > 0 ? { input: body } : {};
       const actions = action.split('&&');
 
       for (const action of actions) {
-        require('execa').command(action, opts);
+        //@ts-ignore
+        import('execa').command(action, opts);
       }
       return;
     },
